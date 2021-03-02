@@ -10,8 +10,8 @@
     "migrate:test": "env NODE_ENV=test npm run migrate",
     "migrate:production": "heroku run npm run migrate",
     "start": "node src/server.js",
-    "deploy": "git push heroku master:main",
-    "postdeploy": "npm run migrate:production"
+    "postdeploy": "npm run migrate:production",
+    "deploy": "git push heroku main"
   },
   "keywords": [],
   "engines": {
@@ -26,7 +26,7 @@
     "express": "^4.16.4",
     "helmet": "^3.15.0",
     "jsonwebtoken": "^8.5.0",
-    "knex": "^0.16.3",
+    "knex": "^0.21.19",
     "morgan": "^1.9.1",
     "pg": "^7.18.2",
     "postgrator-cli": "^3.2.0"

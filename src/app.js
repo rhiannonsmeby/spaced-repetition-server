@@ -7,12 +7,11 @@ const errorHandler = require('./middleware/error-handler')
 const authRouter = require('./auth/auth-router')
 const languageRouter = require('./language/language-router')
 const userRouter = require('./user/user-router')
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
 
 const app = express()
 
-app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
-  skip: () => NODE_ENV === 'test',
-}))
+app.use(morgan(morganSetting))
 app.use(cors())
 app.use(helmet())
 
