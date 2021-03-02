@@ -27,7 +27,7 @@ VALUES
   (4, 1, 'pas trop cuites', 'not too cooked', 5),
   (5, 1, 'sucré', 'sweet', 6),
   (6, 1, 'salé', 'savory', 7),
-  (7, 1, 'merci', 'thanks', 8),
+  (7, 1, 'merci', 'thank you', 8),
   (8, 1, 'bonne journée', 'have a good day', 9),
   (9, 1, 'je vais vous prendre', 'I am going to get', 10),
   (10, 1, 'végétarien', 'vegetarian', 11),
