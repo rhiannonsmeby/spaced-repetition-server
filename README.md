@@ -1,24 +1,43 @@
-# Spaced repetition API!
+# Spaced Repetition API
 
-## Local dev setup
+## Live app: https://spaced-repetition-rhiannon.vercel.app
+## Client repo: https://github.com/rhiannonsmeby/spaced-repetition-client
 
-If using user `dunder-mifflin`:
+## Summary
 
-```bash
-mv example.env .env
-createdb -U dunder-mifflin spaced-repetition
-createdb -U dunder-mifflin spaced-repetition-test
+The Spaced Repetition app is a demonstration of the spaced repetition revision technique for learning vocabulary in a foriegn language. Currently, only French is supported, but you can fork this repo and the corresponding server repo if you would like to expand it to include additional languages.
+
+## API Documentation
+### Base URL: https://peaceful-savannah-33351.herokuapp.com/api
+
+### Responses
+This API returns json responses in the following format
+```javascript
+{
+    "error": "message"
+}
 ```
 
-If your `dunder-mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+### Endpoints
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DATABASE_NAME=spaced-repetition-test npm run migrate
-```
+#### BaseURL/auth
+##### /token
+POST - Enables the user to submit login credentials
+PUT - Refreshes the auth token
 
-And `npm test` should work at this point
+#### BaseURL/language
+GET - Returns the user's language data
+##### /head
+GET - Returns the next word and its data
+##### /guess
+POST - Enables the user to submit a guess for the translation of the word
+
+### Status codes
+* 200 OK
+* 201 CREATED
+* 400 BAD REQUEST
+* 500 INTERNAL SERVER ERROR
+
 
 ## Configuring Postgres
 
